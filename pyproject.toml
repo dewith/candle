@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smoltorch"
+version = "0.1.0"
+requires-python = ">= 3.8"
+dependencies = ["numpy==1.26.4"]
+authors = [{ name = "Dewith Miramón", email = "dewithmiramon@gamil.com" }]
+description = "A tiny reimplementation of Pytorch for learning purposes!"
+readme = "README.md"
+license = { file = "MIT License" }
+keywords = ["deep learning", "machine learning", "numpy", "torch"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/dewith/smol-torch.git"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["smoltorch*"]
+exclude = ["smoltorch.tests*"]
+namespaces = false
+
+[tool.numpydoc_validation]
+checks = [
+    "all",   # report on all checks, except the below
+    "EX01",
+    "SA01",
+    "ES01",
+]
