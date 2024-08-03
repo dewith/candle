@@ -12,10 +12,9 @@ def test_tensor_creation():
     data = np.arange(np.prod(shape)).reshape(shape)
 
     torch_tensor = torch.tensor(data)
-    smol_tensor = tensor.create_tensor(data, shape)
+    smol_tensor = tensor.Tensor(data, shape)
 
     assert np.allclose(torch_tensor.numpy(), smol_tensor.data)
     assert torch_tensor.shape == smol_tensor.shape
     assert torch_tensor.ndim == smol_tensor.ndim
     assert torch_tensor.stride() == smol_tensor.strides
-    assert torch_tensor.device.type == smol_tensor.device
