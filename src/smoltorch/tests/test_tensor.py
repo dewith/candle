@@ -3,7 +3,7 @@
 import numpy as np
 import torch
 
-from smoltorch import tensor
+import smoltorch as smol
 
 
 def test_tensor_creation():
@@ -12,9 +12,10 @@ def test_tensor_creation():
     data = np.arange(np.prod(shape)).reshape(shape)
 
     torch_tensor = torch.tensor(data)
-    smol_tensor = tensor.Tensor(data, shape)
+    smol_tensor = smol.tensor(data, shape)
+    smol_tensor_data = smol_tensor.data.reshape(smol_tensor.shape)
 
-    assert np.allclose(torch_tensor.numpy(), smol_tensor.data)
+    assert np.allclose(torch_tensor.numpy(), smol_tensor_data)
     assert torch_tensor.shape == smol_tensor.shape
     assert torch_tensor.ndim == smol_tensor.ndim
     assert torch_tensor.stride() == smol_tensor.strides
