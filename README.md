@@ -1,4 +1,4 @@
-# Smol Torch 🐦‍🔥
+# Candle 🕯️
 
 This is a tiny implementation of a neural network library in Python.
 
