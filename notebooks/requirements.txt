@@ -1,0 +1,14 @@
+# Core
+setuptools
+wheel
+build
+twine
+
+# Package
+numpy==1.26.4
+
+# Dev
+torch==2.2.2
+pytest
+pre-commit
+ipykernel
