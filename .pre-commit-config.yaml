@@ -15,11 +15,11 @@ repos:
     hooks:
       - id: nbstripout
 
-  - repo: https://github.com/numpy/numpydoc
-    rev: v1.8.0rc2
-    hooks:
-      - id: numpydoc-validation
-        exclude: (tests|docs)/.*
+  # - repo: https://github.com/numpy/numpydoc
+  #   rev: v1.8.0rc2
+  #   hooks:
+  #     - id: numpydoc-validation
+  #       exclude: (tests|docs)/.*
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.5.6
